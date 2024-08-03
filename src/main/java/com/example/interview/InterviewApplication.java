@@ -1,4 +1,4 @@
-package com.example.interview;
+package com.example.Interview;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
