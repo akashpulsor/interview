@@ -1,10 +1,10 @@
 package com.example.Interview.auth.manager;
 
 import com.example.Interview.dto.*;
-import com.example.Interview.auth.entity.ERole;
-import com.example.Interview.auth.entity.RefreshToken;
-import com.example.Interview.auth.entity.Role;
-import com.example.Interview.auth.entity.User;
+import com.example.Interview.entity.ERole;
+import com.example.Interview.entity.RefreshToken;
+import com.example.Interview.entity.Role;
+import com.example.Interview.entity.User;
 import com.example.Interview.exception.EmailExistsException;
 import com.example.Interview.exception.PhoneNumberExistsException;
 import com.example.Interview.exception.TokenRefreshException;
@@ -156,11 +156,7 @@ public class UserManagerImpl  implements  UserManager{
         user.setPhoneNumber(signUpRequestDto.getPhone());
         user.setEmail(signUpRequestDto.getEmail());
         user.setName(signUpRequestDto.getName());
-        user.setCompanyName(signUpRequestDto.getCompanyName());
-        user.setLinkedInUrl(signUpRequestDto.getLinkedInUrl());
-        user.setGithubUrl(signUpRequestDto.getLinkedInUrl());
-        user.setProfileImage(signUpRequestDto.getLinkedInUrl());
-        user.setBio(signUpRequestDto.getLinkedInUrl());
+
         user.setGender(signUpRequestDto.getGender());
         return user;
     }
@@ -200,9 +196,7 @@ public class UserManagerImpl  implements  UserManager{
         userDto.setEmail(user.getEmail());
         userDto.setNumber(user.getPhoneNumber());
         userDto.setPassword(user.getPassword());
-        userDto.setProfileImage(user.getProfileImage());
-        userDto.setFollowerCount(user.getFollowerCount());
-        userDto.setBio(user.getBio());
+
         userDto.setGender(user.getGender());
         return userDto;
     }
@@ -212,9 +206,6 @@ public class UserManagerImpl  implements  UserManager{
         if(userDto.getName()!= null) user.setName(userDto.getName()) ;
         if(userDto.getEmail()!= null) user.setEmail(userDto.getEmail());
         if(userDto.getNumber()!= null) user.setPhoneNumber(userDto.getNumber());
-        if(userDto.getFollowerCount()!= 0l) user.setFollowerCount(userDto.getFollowerCount());
-        if(userDto.getBio()!= null) user.setBio(userDto.getBio());
-        if(userDto.getProfileImage()!= null) user.setProfileImage(userDto.getProfileImage());
         if(userDto.getGender()!= null) user.setGender(userDto.getGender());
         user.setAccountNonLocked(true);
         user.setCredentialsNonExpired(true);
@@ -228,9 +219,6 @@ public class UserManagerImpl  implements  UserManager{
         if(userDto.getName()!= null) user.setName(userDto.getName()) ;
         if(userDto.getEmail()!= null) user.setEmail(userDto.getEmail());
         if(userDto.getNumber()!= null) user.setPhoneNumber(userDto.getNumber());
-        if(userDto.getFollowerCount()!= 0l) user.setFollowerCount(userDto.getFollowerCount());
-        if(userDto.getBio()!= null) user.setBio(userDto.getBio());
-        if(userDto.getProfileImage()!= null) user.setProfileImage(userDto.getProfileImage());
         if(userDto.getGender()!= null) user.setGender(userDto.getGender());
         if(userDto.getUserId()!= 0) user.setId(userDto.getUserId()); ;
         return user;

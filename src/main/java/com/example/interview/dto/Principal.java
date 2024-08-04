@@ -1,6 +1,6 @@
 package com.example.Interview.dto;
 
-import com.example.Interview.auth.entity.User;
+import com.example.Interview.entity.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

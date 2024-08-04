@@ -1,4 +1,4 @@
-package com.example.Interview.auth.entity;
+package com.example.Interview.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

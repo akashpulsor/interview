@@ -21,7 +21,6 @@ public class Producer {
 
     @PostMapping("/credit")
     public String sendMessage(@RequestBody CreditTransactionDto creditTransactionDto) {
-
         this.creditProducerService.addCreditTransaction(creditTransactionDto);
         return "json message sent succuessfully";
     }

@@ -2,7 +2,7 @@ package com.example.Interview.auth.manager;
 
 
 import com.example.Interview.dto.Principal;
-import com.example.Interview.auth.entity.User;
+import com.example.Interview.entity.User;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import jakarta.servlet.http.Cookie;

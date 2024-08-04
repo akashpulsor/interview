@@ -1,6 +1,6 @@
-package com.example.Interview.auth.repository;
+package com.example.Interview.config.repository;
 
-import com.example.Interview.auth.entity.User;
+import com.example.Interview.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Component;

@@ -1,7 +1,7 @@
-package com.example.Interview.auth.repository;
+package com.example.Interview.config.repository;
 
-import com.example.Interview.auth.entity.ERole;
-import com.example.Interview.auth.entity.Role;
+import com.example.Interview.entity.ERole;
+import com.example.Interview.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

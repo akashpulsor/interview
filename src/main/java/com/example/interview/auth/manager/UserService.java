@@ -2,13 +2,13 @@ package com.example.Interview.auth.manager;
 
 
 import com.example.Interview.dto.Principal;
-import com.example.Interview.auth.entity.ERole;
-import com.example.Interview.auth.entity.RefreshToken;
-import com.example.Interview.auth.entity.Role;
-import com.example.Interview.auth.entity.User;
-import com.example.Interview.auth.repository.RefreshTokenRepository;
-import com.example.Interview.auth.repository.RoleRepository;
-import com.example.Interview.auth.repository.UserRepository;
+import com.example.Interview.entity.ERole;
+import com.example.Interview.entity.RefreshToken;
+import com.example.Interview.entity.Role;
+import com.example.Interview.entity.User;
+import com.example.Interview.config.repository.RefreshTokenRepository;
+import com.example.Interview.config.repository.RoleRepository;
+import com.example.Interview.config.repository.UserRepository;
 import com.example.Interview.exception.TokenRefreshException;
 import com.example.Interview.exception.UserNotFoundException;
 import jakarta.transaction.Transactional;
