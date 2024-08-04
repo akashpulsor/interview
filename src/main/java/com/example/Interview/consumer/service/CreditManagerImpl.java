@@ -6,9 +6,10 @@ import com.example.Interview.entity.UserCreditLimit;
 import com.example.Interview.dto.CreditTransactionDto;
 import com.example.Interview.entity.User;
 import com.example.Interview.exception.CreditLimitExceedException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-
+@Slf4j
 @Component
 public class CreditManagerImpl implements CreditManager {
 
@@ -28,9 +29,13 @@ public class CreditManagerImpl implements CreditManager {
 
         UserCreditLimit userCreditLimit = this.creditService.getUserCreditLimit(user.getId());
         int totalLimit = userCreditLimit.getTotalLimit();
-        if(totalLimit - (creditTransactionDto.getAmount() + userCreditLimit.getCurrentSpending()) > 0){
+
+        int currentSpending = userCreditLimit.getCurrentSpending();
+        int currentAmount = creditTransactionDto.getAmount();
+        if(totalLimit - (currentAmount + currentSpending) > 0){
             return true;
         }
+        log.info("Credit limit is expired");
         return false;
     }
 
@@ -40,6 +45,8 @@ public class CreditManagerImpl implements CreditManager {
         if(validateTransaction(user,  creditTransactionDto)){
             throw new CreditLimitExceedException("Credit Limit Exceed Exception");
         }
+
+        log.info("Transaction is valid and has spending limit");
         TransactionHistory transactionHistory = creditTransactionToHistoryDto(user, creditTransactionDto);
         this.transactionHistoryService.addTransactionHistory(transactionHistory);
         return true;
