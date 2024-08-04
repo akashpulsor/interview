@@ -1,4 +1,4 @@
-package com.example.Interview.consumer;
+package com.example.Interview.consumer.service;
 
 
 import com.example.Interview.config.ApplicationConstant;

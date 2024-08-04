@@ -1,7 +1,6 @@
-package com.example.Interview.consumer.repository;
+package com.example.Interview.repository;
 
-import com.example.Interview.consumer.entity.TransactionHistory;
-import com.example.Interview.consumer.entity.UserCreditLimit;
+import com.example.Interview.entity.TransactionHistory;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

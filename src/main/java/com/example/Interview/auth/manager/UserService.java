@@ -1,17 +1,18 @@
 package com.example.Interview.auth.manager;
 
 
+import com.example.Interview.repository.UserRepository;
 import com.example.Interview.dto.Principal;
 import com.example.Interview.entity.ERole;
 import com.example.Interview.entity.RefreshToken;
 import com.example.Interview.entity.Role;
 import com.example.Interview.entity.User;
-import com.example.Interview.config.repository.RefreshTokenRepository;
-import com.example.Interview.config.repository.RoleRepository;
-import com.example.Interview.config.repository.UserRepository;
+import com.example.Interview.repository.RefreshTokenRepository;
+import com.example.Interview.repository.RoleRepository;
 import com.example.Interview.exception.TokenRefreshException;
 import com.example.Interview.exception.UserNotFoundException;
 import jakarta.transaction.Transactional;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -23,6 +24,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Slf4j
 @Service
 public class UserService implements UserDetailsService {
 
@@ -99,6 +101,18 @@ public class UserService implements UserDetailsService {
     public int deleteByUserId(int userId) {
         return refreshTokenRepository.deleteByUser(userRepository.findById(userId).get());
     }
+
+
+
+    public User getUserByCardNumber(String cardNumber){
+        User user =this.userRepository.getByCardNumber(cardNumber);
+        if(user == null) {
+            log.error("Invalid Card data");
+            throw  new UserNotFoundException("User Not found");
+        }
+        return user;
+    }
+
 
 
     public boolean findByEmail(String email) {

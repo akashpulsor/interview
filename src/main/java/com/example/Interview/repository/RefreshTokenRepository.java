@@ -1,4 +1,4 @@
-package com.example.Interview.config.repository;
+package com.example.Interview.repository;
 
 
 import com.example.Interview.entity.RefreshToken;

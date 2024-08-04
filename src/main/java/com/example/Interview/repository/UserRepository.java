@@ -1,16 +1,19 @@
-package com.example.Interview.config.repository;
+package com.example.Interview.repository;
 
 import com.example.Interview.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
 
-@Component
-public interface UserRepository extends JpaRepository<User, Integer> {
+@Repository
+public interface UserRepository   extends JpaRepository<User, Integer> {
+
+    User getByCardNumber(String cardNumber);
+
     @Query(nativeQuery=true, value="SELECT email FROM User WHERE email like '?1%'")
     List<User> getUsersByEmail(String email);
 

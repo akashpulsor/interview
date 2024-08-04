@@ -1,8 +1,8 @@
 package com.example.Interview.consumer.service;
 
 
-import com.example.Interview.consumer.entity.TransactionHistory;
-import com.example.Interview.consumer.repository.TransactionHistoryRepository;
+import com.example.Interview.entity.TransactionHistory;
+import com.example.Interview.repository.TransactionHistoryRepository;
 import org.springframework.stereotype.Service;
 
 @Service

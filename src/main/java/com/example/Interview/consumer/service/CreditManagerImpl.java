@@ -1,11 +1,11 @@
 package com.example.Interview.consumer.service;
 
-import com.example.Interview.consumer.entity.TransactionHistory;
-import com.example.Interview.consumer.entity.UserCreditLimit;
+import com.example.Interview.auth.manager.UserService;
+import com.example.Interview.entity.TransactionHistory;
+import com.example.Interview.entity.UserCreditLimit;
 import com.example.Interview.dto.CreditTransactionDto;
 import com.example.Interview.entity.User;
 import com.example.Interview.exception.CreditLimitExceedException;
-import com.example.Interview.exception.InvalidTransactionException;
 import org.springframework.stereotype.Component;
 
 

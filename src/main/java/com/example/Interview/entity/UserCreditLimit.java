@@ -1,4 +1,4 @@
-package com.example.Interview.consumer.entity;
+package com.example.Interview.entity;
 
 
 import jakarta.persistence.*;
