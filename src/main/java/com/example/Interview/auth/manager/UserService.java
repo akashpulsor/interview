@@ -28,7 +28,7 @@ import java.util.UUID;
 @Service
 public class UserService implements UserDetailsService {
 
-    @Value("${dalai.llama.app.jwtRefreshExpirationMs}")
+    @Value("${interview.app.jwtRefreshExpirationMs}")
     private Long refreshTokenDurationMs;
     private final UserRepository userRepository;
 

@@ -27,16 +27,13 @@ public class JwtService {
 
     private final static Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
-    @Value("${dalai.llama.app.jwtSecret}")
+    @Value("${interview.app.jwtSecret}")
     private String jwtSecret;
-
-    @Value("${dalai.llama.app.jwtExpirationMs}")
+    @Value("${interview.app.jwtExpirationMs}")
     private int jwtExpirationMs;
-
-    @Value("${dalai.llama.app.jwtCookieName}")
+    @Value("${interview.app.jwtCookieName}")
     private String jwtCookie;
-
-    @Value("${dalai.llama.app.jwtRefreshCookieName}")
+    @Value("${interview.app.jwtRefreshCookieName}")
     private String jwtRefreshCookie;
 
 
